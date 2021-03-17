@@ -2,10 +2,11 @@ import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/sequelize";
 
 class User extends Model {
-    public id!: number;
-    public name!: string;
-    public email!: string;
-    public password!: string;
+    public id!: number
+    public firstname!: string
+    public lastname!: string
+    public email!: string
+    public password!: string
 }
 
 User.init(
@@ -15,7 +16,11 @@ User.init(
             autoIncrement: true,
             primaryKey: true,
         },
-        name: {
+        firstname: {
+            type: new DataTypes.STRING(128),
+            allowNull: false,
+        },
+        lastname:{
             type: new DataTypes.STRING(128),
             allowNull: false,
         },
